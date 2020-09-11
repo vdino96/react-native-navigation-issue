@@ -4,7 +4,6 @@ import {Navigation} from 'react-native-navigation';
 
 export default class First extends React.Component {
   componentDidMount() {
-    console.log('I should be logged');
   }
 
   componentWillUnmount() {}
@@ -22,7 +21,7 @@ export default class First extends React.Component {
       <SafeAreaView>
         <ScrollView>
           <TouchableOpacity onPress={this.showAnotherRoot}>
-            <Text>First screen</Text>
+            <Text>Navigate to second screen</Text>
           </TouchableOpacity>
         </ScrollView>
       </SafeAreaView>

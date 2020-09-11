@@ -4,13 +4,13 @@ import {Navigation} from 'react-native-navigation';
 
 export default class Second extends React.Component {
   componentDidMount() {
-    console.log('I should not be logged');
   }
 
   showAnotherRoot() {
     Navigation.showModal({
       component: {
-        name: "Third"
+        name: "Third",
+        id: "third"
       }
     });
   }
@@ -22,7 +22,7 @@ export default class Second extends React.Component {
       <SafeAreaView>
         <ScrollView>
           <TouchableOpacity onPress={this.showAnotherRoot}>
-            <Text>Second screen</Text>
+            <Text>Show third screen (modal)</Text>
           </TouchableOpacity>
         </ScrollView>
       </SafeAreaView>

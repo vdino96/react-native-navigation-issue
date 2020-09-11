@@ -67,7 +67,7 @@ const App = () => {
       <SafeAreaView>
         <ScrollView>
           <TouchableOpacity onPress={() => generateBottomTab()}>
-            <Text>Here</Text>
+            <Text>Create bottom tab root</Text>
           </TouchableOpacity>
         </ScrollView>
       </SafeAreaView>
