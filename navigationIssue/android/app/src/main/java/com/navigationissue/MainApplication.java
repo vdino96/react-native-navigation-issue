@@ -15,34 +15,30 @@ import com.reactnativenavigation.react.NavigationReactNativeHost;
 import com.reactnativenavigation.react.ReactGateway;
 
 public class MainApplication extends NavigationApplication {
+  private final ReactNativeHost mReactNativeHost = new NavigationReactNativeHost(this) {
+    @Override
+    public boolean getUseDeveloperSupport() {
+      return BuildConfig.DEBUG;
+    }
+
+    @Override
+    protected List<ReactPackage> getPackages() {
+      @SuppressWarnings("UnnecessaryLocalVariable")
+      List<ReactPackage> packages = new PackageList(this).getPackages();
+      // Packages that cannot be autolinked yet can be added manually here, for
+      // example:
+      // packages.add(new MyReactNativePackage());
+      return packages;
+    }
+  };
 
   @Override
-  protected ReactGateway createReactGateway() {
-    ReactNativeHost host = new NavigationReactNativeHost(this, isDebug(), createAdditionalReactPackages()) {
-      @Override
-      protected String getJSMainModuleName() {
-        return "index";
-      }
-    };
-    return new ReactGateway(this, isDebug(), host);
+  public ReactNativeHost getReactNativeHost() {
+    return mReactNativeHost;
   }
 
   @Override
-  public boolean isDebug() {
-    return BuildConfig.DEBUG;
-  }
-
-  protected List<ReactPackage> getPackages() {
-    @SuppressWarnings("UnnecessaryLocalVariable")
-    List<ReactPackage> packages = new PackageList(this).getPackages();
-    // Packages that cannot be autolinked yet can be added manually here, for
-    // example:
-    // packages.add(new MyReactNativePackage());
-    return packages;
-  }
-
-  @Override
-  public List<ReactPackage> createAdditionalReactPackages() {
-    return getPackages();
+  public void onCreate() {
+    super.onCreate();
   }
 }

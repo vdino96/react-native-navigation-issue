@@ -10,12 +10,10 @@ export default class First extends React.Component {
   componentWillUnmount() {}
 
   showAnotherRoot() {
-    Navigation.setRoot({
-      root: {
-        component: {
-          name: 'navigation.playground.WelcomeScreen',
-        },
-      },
+    Navigation.push("first", {
+      component: {
+        name: "Second"
+      }
     });
   }
 

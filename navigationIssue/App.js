@@ -3,7 +3,7 @@
  * https://github.com/facebook/react-native
  *
  * @format
- * @flow
+ * @flow strict-local
  */
 
 import React from 'react';
@@ -19,41 +19,43 @@ const generateBottomTab = () => {
             tabsAttachMode: 'onSwitchToTab',
           },
         },
-        children: [
-          {
-            component: {
-              name: 'First',
-              options: {
-                bottomTab: {
-                  text: 'First',
-                  icon: require('./icons/th.png'),
+        children: 
+          [{
+            stack: {
+              children: [{
+                component: {
+                  name: 'First',
+                  options: {
+                    bottomTab: {
+                      text: 'First',
+                      icon: require('./icons/th.png'),
+                      iconColor: "green",
+                      selectedIconColor: "red"
+                    },
+                  },
+                  id: "first"
                 },
-              },
-            },
+              }]
+            }
           },
           {
-            component: {
-              name: 'Second',
-              options: {
-                bottomTab: {
-                  text: 'Second',
-                  icon: require('./icons/th.png'),
+            stack: {
+              children: [{
+                component: {
+                  name: 'Second',
+                  options: {
+                    bottomTab: {
+                      text: 'Second',
+                      icon: require('./icons/th.png'),
+                      iconColor: "green",
+                      selectedIconColor: "red"
+                    },
+                  },
+                  id: "second"
                 },
-              },
-            },
-          },
-          {
-            component: {
-              name: 'Third',
-              options: {
-                bottomTab: {
-                  text: 'Third',
-                  icon: require('./icons/th.png'),
-                },
-              },
-            },
-          },
-        ],
+              }]
+            }
+          }],
       },
     },
   });
