@@ -4,7 +4,6 @@ import { Navigation } from 'react-native-navigation';
 
 export default class Third extends React.Component {
   componentDidMount() {
-    console.log('Me neither');
   }
 
   componentWillUnmount() {}
